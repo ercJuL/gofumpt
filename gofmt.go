@@ -52,6 +52,8 @@ var (
 	// DEPRECATED
 	rewriteRule = flag.String("r", "", "")
 	simplifyAST = flag.Bool("s", false, "")
+
+	localPrefix = flag.String("local", "", "put imports beginning with this string after 3rd-party packages; comma-separated list")
 )
 
 // Keep these in sync with go/format/format.go.
@@ -93,6 +95,7 @@ func usage() {
 	-l        list files whose formatting differs from gofumpt's
 	-w        write result to (source) file instead of stdout
 	-extra    enable extra rules which should be vetted by a human
+	-loacl    imports beginning with this string after 3rd-party packages; comma-separated list
 
 	-lang       str    target Go version in the form "1.X" (default from go.mod)
 	-modpath    str    Go module path containing the source file (default from go.mod)
@@ -283,7 +286,7 @@ func processFile(filename string, info fs.FileInfo, in io.Reader, r *reporter, e
 		return err
 	}
 
-	ast.SortImports(fileSet, file)
+	gformat.SortImports(*localPrefix, fileSet, file)
 
 	// Apply gofumpt's changes before we print the code in gofumpt's format.
 
@@ -312,6 +315,7 @@ func processFile(filename string, info fs.FileInfo, in io.Reader, r *reporter, e
 			LangVersion: lang,
 			ModulePath:  modpath,
 			ExtraRules:  *extraRules,
+			LocalPrefix: *localPrefix,
 		})
 	}
 

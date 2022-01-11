@@ -57,6 +57,8 @@ type Options struct {
 	// ExtraRules enables extra formatting rules, such as grouping function
 	// parameters with repeated types together.
 	ExtraRules bool
+
+	LocalPrefix string
 }
 
 // Source formats src in gofumpt's format, assuming that src holds a valid Go
@@ -872,6 +874,7 @@ func isCgoImport(decl *ast.GenDecl) bool {
 // joinStdImports ensures that all standard library imports are together and at
 // the top of the imports list.
 func (f *fumpter) joinStdImports(d *ast.GenDecl) {
+	return
 	var std, other []ast.Spec
 	firstGroup := true
 	lastEnd := d.Pos()
@@ -957,7 +960,7 @@ func (f *fumpter) joinStdImports(d *ast.GenDecl) {
 	// If we moved any std imports to the first group, we need to sort them
 	// again.
 	if needsSort {
-		ast.SortImports(f.fset, f.astFile)
+		SortImports(f.LocalPrefix, f.fset, f.astFile)
 	}
 }
 
