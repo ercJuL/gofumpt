@@ -1,11 +1,13 @@
 # gofumpt
 
+[![Go Reference](https://pkg.go.dev/badge/mvdan.cc/gofumpt/format.svg)](https://pkg.go.dev/mvdan.cc/gofumpt/format)
+
 	go install mvdan.cc/gofumpt@latest
 
 Enforce a stricter format than `gofmt`, while being backwards compatible.
 That is, `gofumpt` is happy with a subset of the formats that `gofmt` is happy with.
 
-The tool is a modified fork of `gofmt` as of Go 1.18.
+The tool is a fork of `gofmt` as of Go 1.19, and requires Go 1.18 or later.
 It can be used as a drop-in replacement to format your Go code,
 and running `gofmt` after `gofumpt` should produce no changes.
 For example:
