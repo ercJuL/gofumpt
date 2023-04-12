@@ -6,9 +6,9 @@ package format_test
 import (
 	"testing"
 
-	qt "github.com/frankban/quicktest"
+	"github.com/ercJuL/gofumpt/format"
 
-	"mvdan.cc/gofumpt/format"
+	qt "github.com/frankban/quicktest"
 )
 
 func TestSourceIncludesSimplify(t *testing.T) {

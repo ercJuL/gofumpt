@@ -22,7 +22,7 @@ import (
 	"go/token"
 	"io"
 
-	"mvdan.cc/gofumpt/internal/govendor/go/printer"
+	"github.com/ercJuL/gofumpt/internal/govendor/go/printer"
 )
 
 // Keep these in sync with cmd/gofmt/gofmt.go.

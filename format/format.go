@@ -21,12 +21,11 @@ import (
 	"unicode"
 	"unicode/utf8"
 
+	"github.com/ercJuL/gofumpt/internal/govendor/go/format"
+	"github.com/ercJuL/gofumpt/internal/version"
 	"github.com/google/go-cmp/cmp"
 	"golang.org/x/mod/semver"
 	"golang.org/x/tools/go/ast/astutil"
-
-	"mvdan.cc/gofumpt/internal/govendor/go/format"
-	"mvdan.cc/gofumpt/internal/version"
 )
 
 // Options is the set of formatting options which affect gofumpt.

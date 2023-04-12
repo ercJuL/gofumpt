@@ -1,4 +1,4 @@
-module mvdan.cc/gofumpt
+module github.com/ercJuL/gofumpt
 
 go 1.19
 
