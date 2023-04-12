@@ -11,7 +11,7 @@ no matter what Go version is used to build it, as Go versions can change those
 three packages in ways that alter formatting behavior.
 
 This vendoring adds a small amount of duplication when using the
-`mvdan.cc/gofumpt/format` library, but it's the only way to make gofumpt
+`github.com/ercJuL/gofumpt/format` library, but it's the only way to make gofumpt
 versions consistent in their behavior and formatting, just like gofmt.
 
 The jump to Go 1.20's `go/printer` should also bring a small performance
@@ -133,7 +133,7 @@ README](https://github.com/mvdan/gofumpt).
 
 `gofumports` also added maintenance work and potential confusion to end users.
 In the future, there will only be one way to use `gofumpt` from the command
-line. We also have a [Go API](https://pkg.go.dev/mvdan.cc/gofumpt/format) for
+line. We also have a [Go API](https://pkg.go.dev/github.com/ercJuL/gofumpt/format) for
 those building programs with gofumpt.
 
 Finally, this release adds the `-version` flag, to print the tool's own version.

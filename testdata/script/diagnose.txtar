@@ -48,7 +48,7 @@ env GOFUMPT_PUBLISHED_VERSION=v0.3.2-0.20220627183521-8dda8068d9f3
 # TODO: update these once the library fix hits master
 
 # gofumpt as the main binary with a real module version.
-go install mvdan.cc/gofumpt@${GOFUMPT_PUBLISHED_VERSION}
+go install github.com/ercJuL/gofumpt@${GOFUMPT_PUBLISHED_VERSION}
 exec ${GOBIN}/gofumpt foo.go
 cmp stdout foo.go.golden-released
 

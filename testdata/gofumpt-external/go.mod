@@ -2,7 +2,7 @@ module test/gofumpt-external
 
 go 1.19
 
-require mvdan.cc/gofumpt v0.3.2-0.20220627183521-8dda8068d9f3
+require github.com/ercJuL/gofumpt v0.3.2-0.20220627183521-8dda8068d9f3
 
 require (
 	github.com/google/go-cmp v0.5.8 // indirect

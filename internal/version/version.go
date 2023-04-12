@@ -17,7 +17,7 @@ import (
 // Note that this is not a main package, so a "var version" will not work with
 // our go-cross script which uses -ldflags=main.version=xxx.
 
-const ourModulePath = "mvdan.cc/gofumpt"
+const ourModulePath = "github.com/ercJuL/gofumpt"
 
 const fallbackVersion = "(devel)" // to match the default from runtime/debug
 
